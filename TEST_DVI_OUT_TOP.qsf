@@ -1,0 +1,382 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 14.0.2 Build 209 09/17/2014 SJ Web Edition
+# Date created = 18:53:12  March 12, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Practica1_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M08DAF484C8GES
+set_global_assignment -name TOP_LEVEL_ENTITY TEST_DVI_OUT_TOP
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:53:12  MARCH 12, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 2
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+#CLOCKS
+set_location_assignment PIN_N14 -to CLK_50M_i -tag platfrom
+set_location_assignment PIN_N15 -to CLK_USR_i -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50M_i -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_USR_i -tag platfrom
+
+#LED
+set_location_assignment PIN_M2 -to LED_o[0] -tag platfrom
+set_location_assignment PIN_N1 -to LED_o[1] -tag platfrom
+set_location_assignment PIN_R2 -to LED_o[2] -tag platfrom
+set_location_assignment PIN_T1 -to LED_o[3] -tag platfrom
+set_location_assignment PIN_V4 -to LED_o[4] -tag platfrom
+set_location_assignment PIN_T6 -to LED_o[5] -tag platfrom
+set_location_assignment PIN_AB4 -to LED_o[6] -tag platfrom
+set_location_assignment PIN_AA5 -to LED_o[7] -tag platfrom
+
+#PSW_i
+set_location_assignment PIN_M1 -to PSW_i[0]
+set_location_assignment PIN_R1 -to PSW_i[1]
+set_location_assignment PIN_V5 -to PSW_i[2]
+set_location_assignment PIN_AB5 -to PSW_i[3]
+
+#FLASH
+set_location_assignment PIN_P11 -to SFLASH_DCLK -tag platfrom
+set_location_assignment PIN_R11 -to SFLASH_ASDI -tag platfrom
+set_location_assignment PIN_R10 -to SFLASH_CSn -tag platfrom
+set_location_assignment PIN_P10 -to SFLASH_DATA -tag platfrom
+
+
+#AD5681R/DAC12-bit
+set_location_assignment PIN_N18 -to AD5681R_LDACn -tag platfrom
+set_location_assignment PIN_L15 -to AD5681R_RSTn -tag platfrom
+set_location_assignment PIN_G17 -to AD5681R_SCL -tag platfrom
+set_location_assignment PIN_H17 -to AD5681R_SDA -tag platfrom
+set_location_assignment PIN_N19 -to AD5681R_SYNCn -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AD5681R_LDACn -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AD5681R_RSTn -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AD5681R_SCL -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AD5681R_SDA -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AD5681R_SYNCn -tag platfrom
+
+
+#ADT7420 Temperature Sensor I2C
+set_location_assignment PIN_P13 -to ADT7420_CT -tag platfrom
+set_location_assignment PIN_AB14 -to ADT7420_INT -tag platfrom
+set_location_assignment PIN_W13 -to ADT7420_SCL -tag platfrom
+set_location_assignment PIN_R13 -to ADT7420_SDA -tag platfrom
+
+#ACCELEROMETER
+set_location_assignment PIN_L14 -to ADXL362_CSn -tag platfrom
+set_location_assignment PIN_L18 -to ADXL362_MISO -tag platfrom
+set_location_assignment PIN_L19 -to ADXL362_MOSI -tag platfrom
+set_location_assignment PIN_M18 -to ADXL362_SCLK -tag platfrom
+set_location_assignment PIN_M15 -to ADXL362_INT1 -tag platfrom
+set_location_assignment PIN_M14 -to ADXL362_INT2 -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADXL362_CSn -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADXL362_MISO -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADXL362_MOSI -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADXL362_SCLK -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADXL362_INT1 -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADXL362_INT2 -tag platfrom
+
+
+#SDRAM
+set_location_assignment PIN_T20 -to SDRAM_A[0] -tag platfrom
+set_location_assignment PIN_T19 -to SDRAM_A[1] -tag platfrom
+set_location_assignment PIN_T18 -to SDRAM_A[2] -tag platfrom
+set_location_assignment PIN_AA21 -to SDRAM_A[3] -tag platfrom
+set_location_assignment PIN_AA22 -to SDRAM_A[4] -tag platfrom
+set_location_assignment PIN_U22 -to SDRAM_A[5] -tag platfrom
+set_location_assignment PIN_T22 -to SDRAM_A[6] -tag platfrom
+set_location_assignment PIN_R22 -to SDRAM_A[7] -tag platfrom
+set_location_assignment PIN_P20 -to SDRAM_A[8] -tag platfrom
+set_location_assignment PIN_P22 -to SDRAM_A[9] -tag platfrom
+set_location_assignment PIN_U21 -to SDRAM_A[10] -tag platfrom
+set_location_assignment PIN_P19 -to SDRAM_A[11] -tag platfrom
+set_location_assignment PIN_N20 -to SDRAM_A[12] -tag platfrom
+set_location_assignment PIN_R20 -to SDRAM_BA[0] -tag platfrom
+set_location_assignment PIN_T21 -to SDRAM_BA[1] -tag platfrom
+set_location_assignment PIN_N21 -to SDRAM_CASn -tag platfrom
+set_location_assignment PIN_N22 -to SDRAM_CKE -tag platfrom
+set_location_assignment PIN_M22 -to SDRAM_CLK -tag platfrom
+set_location_assignment PIN_P21 -to SDRAM_CSn -tag platfrom
+set_location_assignment PIN_C22 -to SDRAM_DQ[0] -tag platfrom
+set_location_assignment PIN_D22 -to SDRAM_DQ[1] -tag platfrom
+set_location_assignment PIN_E22 -to SDRAM_DQ[2] -tag platfrom
+set_location_assignment PIN_F22 -to SDRAM_DQ[3] -tag platfrom
+set_location_assignment PIN_G22 -to SDRAM_DQ[4] -tag platfrom
+set_location_assignment PIN_H22 -to SDRAM_DQ[5] -tag platfrom
+set_location_assignment PIN_J22 -to SDRAM_DQ[6] -tag platfrom
+set_location_assignment PIN_K22 -to SDRAM_DQ[7] -tag platfrom
+set_location_assignment PIN_K21 -to SDRAM_DQ[8] -tag platfrom
+set_location_assignment PIN_J21 -to SDRAM_DQ[9] -tag platfrom
+set_location_assignment PIN_H21 -to SDRAM_DQ[10] -tag platfrom
+set_location_assignment PIN_G20 -to SDRAM_DQ[11] -tag platfrom
+set_location_assignment PIN_F21 -to SDRAM_DQ[12] -tag platfrom
+set_location_assignment PIN_E21 -to SDRAM_DQ[13] -tag platfrom
+set_location_assignment PIN_D21 -to SDRAM_DQ[14] -tag platfrom
+set_location_assignment PIN_C21 -to SDRAM_DQ[15] -tag platfrom
+set_location_assignment PIN_M20 -to SDRAM_RASn -tag platfrom
+set_location_assignment PIN_M21 -to SDRAM_WEn -tag platfrom
+set_location_assignment PIN_L20 -to SDRAM_DQM[0] -tag platfrom
+set_location_assignment PIN_L22 -to SDRAM_DQM[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[12] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[11] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[10] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[9] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[8] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[7] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[6] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[5] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[4] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[3] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[2] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_A[0] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_BA[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_BA[0] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_CASn -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_RASn -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_CKE -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_CLK -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_CSn -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_WEn
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[15] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[14] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[13] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[12] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[11] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[10] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[9] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[8] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[7] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[6] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[5] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[4] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[3] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[2] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQ[0] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQM[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SDRAM_DQM[0] -tag platfrom
+
+#PMOA
+set_location_assignment PIN_C20 -to PMOD_A_io[0] -tag platfrom
+set_location_assignment PIN_D19 -to PMOD_A_io[1] -tag platfrom
+set_location_assignment PIN_D18 -to PMOD_A_io[2] -tag platfrom
+set_location_assignment PIN_E18 -to PMOD_A_io[3] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to PMOD_A_io[0]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to PMOD_A_io[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_A_io[2] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_A_io[3] -tag platfrom
+
+#PMOB
+set_location_assignment PIN_E19 -to PMOD_B_io[0] -tag platfrom
+set_location_assignment PIN_F18 -to PMOD_B_io[1] -tag platfrom
+set_location_assignment PIN_F20 -to PMOD_B_io[2] -tag platfrom
+set_location_assignment PIN_G19 -to PMOD_B_io[3] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_B_io[0] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_B_io[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_B_io[2] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_B_io[3] -tag platfrom
+
+
+#PMOC
+set_location_assignment PIN_U18 -to PMOD_C_io[0] -tag platfrom
+set_location_assignment PIN_U17 -to PMOD_C_io[1] -tag platfrom
+set_location_assignment PIN_R18 -to PMOD_C_io[2] -tag platfrom
+set_location_assignment PIN_P18 -to PMOD_C_io[3] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_C_io[0] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_C_io[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_C_io[2] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_C_io[3] -tag platfrom
+
+
+#PMOD
+set_location_assignment PIN_R14 -to PMOD_D_io[0] -tag platfrom
+set_location_assignment PIN_R15 -to PMOD_D_io[1] -tag platfrom
+set_location_assignment PIN_P15 -to PMOD_D_io[2] -tag platfrom
+set_location_assignment PIN_P14 -to PMOD_D_io[3] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_D_io[0] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_D_io[1] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_D_io[2] -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PMOD_D_io[3] -tag platfrom
+
+#ANALOG inputs
+set_location_assignment PIN_F5 -to AIN[0]
+set_location_assignment PIN_E4 -to AIN[1]
+set_location_assignment PIN_F4 -to AIN[2]
+set_location_assignment PIN_E3 -to AIN[3]
+set_location_assignment PIN_J8 -to AIN[4]
+set_location_assignment PIN_G4 -to AIN[5]
+set_location_assignment PIN_J9 -to AIN[6]
+set_location_assignment PIN_F3 -to AIN[7]
+
+
+#DIFF/GPIO_0_io/J3
+
+
+#LVDS/GPIOS/J4
+
+
+#GPIO_2_io/EG
+
+
+
+#GLOBAL SETTINGS
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS" -tag platfrom
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON -tag platfrom
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT" -tag platfrom
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V" -tag platfrom
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8 -tag platfrom
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 7 -tag platfrom
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tck -tag platfrom
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF -tag platfrom
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF -tag platfrom
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF -tag platfrom
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise -tag platfrom
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall -tag platfrom
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise -tag platfrom
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall -tag platfrom
+
+#OTHER SETTINGS
+
+
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name MUX_RESTRUCTURE AUTO
+set_global_assignment -name STATE_MACHINE_PROCESSING AUTO
+set_global_assignment -name SAFE_STATE_MACHINE OFF
+set_global_assignment -name IGNORE_VERILOG_INITIAL_CONSTRUCTS OFF
+set_global_assignment -name VERILOG_CONSTANT_LOOP_LIMIT 5000
+set_global_assignment -name VERILOG_NON_CONSTANT_LOOP_LIMIT 250
+set_global_assignment -name INFER_RAMS_FROM_RAW_LOGIC ON
+set_global_assignment -name PARALLEL_SYNTHESIS ON
+set_global_assignment -name NOT_GATE_PUSH_BACK ON
+set_global_assignment -name ALLOW_POWER_UP_DONT_CARE ON
+set_global_assignment -name REMOVE_REDUNDANT_LOGIC_CELLS OFF
+set_global_assignment -name REMOVE_DUPLICATE_REGISTERS ON
+set_global_assignment -name IGNORE_SOFT_BUFFERS ON
+set_global_assignment -name LIMIT_AHDL_INTEGERS_TO_32_BITS OFF
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE BALANCED
+set_global_assignment -name AUTO_CARRY_CHAINS ON
+set_global_assignment -name STRICT_RAM_RECOGNITION OFF
+set_global_assignment -name USE_LOGICLOCK_CONSTRAINTS_IN_BALANCING ON
+set_global_assignment -name IGNORE_TRANSLATE_OFF_AND_SYNTHESIS_OFF OFF
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name REPORT_PARAMETER_SETTINGS ON
+set_global_assignment -name REPORT_SOURCE_ASSIGNMENTS ON
+set_global_assignment -name REPORT_CONNECTIVITY_CHECKS ON
+set_global_assignment -name SYNCHRONIZATION_REGISTER_CHAIN_LENGTH 2
+set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS "NORMAL COMPILATION"
+set_global_assignment -name HDL_MESSAGE_LEVEL LEVEL3
+set_global_assignment -name NUMBER_OF_INVERTED_REGISTERS_REPORTED 100
+set_global_assignment -name SYNTH_PROTECT_SDC_CONSTRAINT OFF
+set_global_assignment -name SYNTHESIS_EFFORT AUTO
+set_global_assignment -name SHIFT_REGISTER_RECOGNITION_ACLR_SIGNAL ON
+set_global_assignment -name PRE_MAPPING_RESYNTHESIS OFF
+set_global_assignment -name SYNTH_MESSAGE_LEVEL HIGH
+set_global_assignment -name SYNTH_RESOURCE_AWARE_INFERENCE_FOR_BLOCK_RAM ON
+set_global_assignment -name OPTIMIZATION_MODE BALANCED
+set_instance_assignment -name PCI_IO ON -to PMOD_A_io[3]
+set_instance_assignment -name PCI_IO ON -to PMOD_A_io[2]
+set_instance_assignment -name PCI_IO ON -to PMOD_A_io[1]
+set_instance_assignment -name PCI_IO ON -to PMOD_A_io[0]
+set_instance_assignment -name PCI_IO ON -to PMOD_B_io[3]
+set_instance_assignment -name PCI_IO ON -to PMOD_B_io[2]
+set_instance_assignment -name PCI_IO ON -to PMOD_B_io[1]
+set_instance_assignment -name PCI_IO ON -to PMOD_B_io[0]
+set_instance_assignment -name PCI_IO ON -to PMOD_C_io[3]
+set_instance_assignment -name PCI_IO ON -to PMOD_C_io[2]
+set_instance_assignment -name PCI_IO ON -to PMOD_C_io[1]
+set_instance_assignment -name PCI_IO ON -to PMOD_C_io[0]
+set_instance_assignment -name PCI_IO ON -to PMOD_D_io[3]
+set_instance_assignment -name PCI_IO ON -to PMOD_D_io[2]
+set_instance_assignment -name PCI_IO ON -to PMOD_D_io[1]
+set_instance_assignment -name PCI_IO ON -to PMOD_D_io[0]
+set_instance_assignment -name PCI_IO ON -to PSW_i[3]
+set_instance_assignment -name PCI_IO ON -to PSW_i[2]
+set_instance_assignment -name PCI_IO ON -to PSW_i[1]
+set_instance_assignment -name PCI_IO ON -to PSW_i[0]
+set_instance_assignment -name PCI_IO ON -to CLK_USR_i
+set_global_assignment -name VERILOG_FILE RTL/TEST_DVI_OUT/TEST_PATTERN.v
+set_global_assignment -name VERILOG_FILE RTL/TEST_DVI_OUT/TEST_DVI_OUT.v
+set_global_assignment -name VERILOG_FILE RTL/TEST_DVI_OUT/DVI_ENC.v
+set_global_assignment -name VERILOG_FILE IP/PLL/PLL.v
+set_global_assignment -name QIP_FILE IP/PLL/PLL.qip
+set_global_assignment -name SOURCE_FILE "BeMicro_MAX_10_-_ISSI_IS42S16400J-7TL.qprs"
+set_global_assignment -name VERILOG_FILE RTL/TEST_DVI_OUT_TOP.v
+set_global_assignment -name SOURCE_FILE db/TEST_DVI_OUT_TOP.cmp.rdb
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name QIP_FILE IP/SERIALIZER/SERIALIZER.qip
+set_global_assignment -name SIP_FILE IP/SERIALIZER/SERIALIZER.sip
+set_instance_assignment -name IO_STANDARD LVDS -to LVDS_TX_o[0]
+set_instance_assignment -name IO_STANDARD LVDS -to LVDS_TX_o[1]
+set_instance_assignment -name IO_STANDARD LVDS -to LVDS_TX_o[2]
+set_instance_assignment -name IO_STANDARD LVDS -to LVDS_TX_o[3]
+set_location_assignment PIN_V17 -to LVDS_TX_o[0]
+set_location_assignment PIN_W17 -to "LVDS_TX_o[0](n)"
+set_location_assignment PIN_V16 -to LVDS_TX_o[1]
+set_location_assignment PIN_U15 -to "LVDS_TX_o[1](n)"
+set_location_assignment PIN_W15 -to LVDS_TX_o[2]
+set_location_assignment PIN_V14 -to "LVDS_TX_o[2](n)"
+set_location_assignment PIN_W14 -to LVDS_TX_o[3]
+set_location_assignment PIN_V13 -to "LVDS_TX_o[3](n)"
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to PSW_i[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to PSW_i[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SFLASH_DCLK
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SFLASH_DATA
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SFLASH_CSn
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SFLASH_ASDI
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to PSW_i[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to PSW_i[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to LED_o[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ADT7420_SDA
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ADT7420_SCL
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ADT7420_INT
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to ADT7420_CT
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
